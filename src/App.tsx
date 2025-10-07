@@ -1,4 +1,3 @@
-import './App.css'
 import { Listing } from './components/Listing'
 import products from './components/data/data.json'
 
