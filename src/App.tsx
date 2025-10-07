@@ -1,11 +1,19 @@
-import React from 'react';
-import Listing from './components/Listing';
-import { data } from './components/data';
+import './App.css'
+import { Listing } from './components/Listing'
+import products from './components/data/data.json'
 
-const App: React.FC = () => {
-  return (
-      <Listing items={data} />
-  );
-};
+function App() {
+  const items = products.map((product) => ({
+    listing_id: product.listing_id,
+    url: product.url,
+    image: product.MainImage?.url_570xN,
+    title: product.title,
+    currency_code: product.currency_code,
+    price: product.price,
+    quantity: product.quantity,
+  }))
 
-export default App;
+  return <Listing items={items} />
+}
+
+export default App
